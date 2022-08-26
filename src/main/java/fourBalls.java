@@ -2,7 +2,7 @@ import processing.core.PApplet;
 
 public class fourBalls extends PApplet
 {
-    int x=0,y=0,z=0,za=0;
+    int velocityBall1=0,velocityBall2=0,velocityBall3=0,velocityBall4=0;
     private static final int height=750;
     private static final int width=1000;
     private static final int radius=25;
@@ -15,7 +15,6 @@ public class fourBalls extends PApplet
     public void settings()
     {
         super.settings();
-
         size(width, height);
     }
 
@@ -23,16 +22,16 @@ public class fourBalls extends PApplet
     @Override
     public void draw()
     {
-        ellipse(x,height/5,radius,radius);
-        x++;
+        ellipse(velocityBall1,height/5,radius,radius);
+        velocityBall1++;
 
-        ellipse(y,(2*height)/5,radius,radius);
-        y=2*x;
+        ellipse(velocityBall2,(2*height)/5,radius,radius);
+        velocityBall2=2*velocityBall1;
 
-        ellipse(z,(3*height)/5,radius,radius);
-        z=3*x;
+        ellipse(velocityBall3,(3*height)/5,radius,radius);
+        velocityBall3=3*velocityBall1;
 
-        ellipse(za,(4*height)/5,radius,radius);
-        za=4*x;
+        ellipse(velocityBall4,(4*height)/5,radius,radius);
+        velocityBall4=4*velocityBall1;
     }
 }
